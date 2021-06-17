@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?> <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 42 42">
+  <defs>
+    <style>
+      .a {
+        fill: #d3d4ed;
+      }
+    </style>
+  </defs>
+  <title>4 Tag</title>
+  <path class="a" d="M39,0H22.86a5,5,0,0,0-3.54,1.46L1.46,19.32a5,5,0,0,0,0,7.07L15.61,40.54a5,5,0,0,0,7.07,0L40.54,22.68A5,5,0,0,0,42,19.14V3A3,3,0,0,0,39,0ZM31,15a4,4,0,1,1,4-4A4,4,0,0,1,31,15Z"/>
+</svg>

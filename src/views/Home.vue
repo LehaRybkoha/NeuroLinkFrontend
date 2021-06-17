@@ -1,18 +1,134 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <section class="main-page">
+        <div class="main-page__title center">
+            <h1 data-text="Main Page" class="main-page__title-text glitch is-glitching">Main Page</h1>
+        </div>
+
+        <div class="main-page__content">
+            <span class="main-page__content-title">Tech Tasks:</span>
+            <Nav />
+        </div>
+    </section>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+    import nav from "../components/nav";
 
-export default {
-  name: 'Home',
-  components: {
-    HelloWorld
-  }
-}
+    export default {
+        name: "Home",
+        components: {
+            Nav: nav
+        }
+    }
 </script>
+
+<style lang="scss">
+    body {
+        background-color: #17212b;
+    }
+
+    .main-page {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        &__title-text {
+            color: #fff;
+            margin: auto;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 120px;
+            text-transform: uppercase;
+        }
+        &__content-title {
+            font-size: 60px;
+            font-weight: bold;
+            color: #919191;
+        }
+    }
+
+    .glitch {
+        position: relative;
+        color: white;
+        mix-blend-mode: lighten;
+
+        &:before,
+        &:after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            width: 100%;
+            background: black;
+            clip: rect(0, 0, 0, 0);
+        }
+
+        &:before {
+            left: -1px;
+            text-shadow: 1px 0 rgba(red, 0.7);
+        }
+
+        &:after {
+            left: 1px;
+            text-shadow: -1px 0 rgba(blue, 0.7);
+        }
+
+        &:before {
+            text-shadow: 4px 0 rgba(red, 0.7);
+            animation: glitch-loop-1 4s infinite ease-in-out alternate-reverse;
+        }
+
+        &:after {
+            text-shadow: -5px 0 rgba(blue, 0.7);
+            animation: glitch-loop-2 4s infinite ease-in-out alternate-reverse;
+        }
+    }
+
+    @keyframes glitch-loop-1 {
+        0% {
+            clip: rect(36px, 9999px, 9px, 0)
+        }
+        25% {
+            clip: rect(25px, 9999px, 99px, 0)
+        }
+        50% {
+            clip: rect(50px, 9999px, 102px, 0)
+        }
+        75% {
+            clip: rect(30px, 9999px, 92px, 0)
+        }
+        100% {
+            clip: rect(91px, 9999px, 98px, 0)
+        }
+    }
+
+    @keyframes glitch-loop-2 {
+        0% {
+            top: -1px;
+            left: 1px;
+            clip: rect(65px, 9999px, 119px, 0)
+        }
+        25% {
+            top: -6px;
+            left: 4px;
+            clip: rect(79px, 9999px, 19px, 0)
+        }
+        50% {
+            top: -3px;
+            left: 2px;
+            clip: rect(68px, 9999px, 11px, 0)
+        }
+        75% {
+            top: 0px;
+            left: -4px;
+            clip: rect(95px, 9999px, 53px, 0)
+        }
+        100% {
+            top: -1px;
+            left: -1px;
+            clip: rect(31px, 9999px, 149px, 0)
+        }
+    }
+
+
+</style>
